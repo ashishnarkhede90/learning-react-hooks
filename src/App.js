@@ -4,6 +4,7 @@ import React from "react";
 import Register from "./Register";
 import Register2 from "./Register2";
 import { FunctionCounter } from "./FunctionCounter";
+import { Joke } from "./Joke";
 
 export default function App() {
   return (

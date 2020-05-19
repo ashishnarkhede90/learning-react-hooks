@@ -2,6 +2,7 @@
  */
 
 import React, { useState, useEffect } from "react";
+import { Joke } from "./Joke";
 
 export const FunctionCounter = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -10,10 +11,10 @@ export const FunctionCounter = () => {
     counter: 0
   });
 
-  const [joke, setJoke] = useState({ text: "", category: "" });
+  // const [joke, setJoke] = useState({ text: "", category: "" });
 
   // effect hook
-  useEffect(() => {
+  /*useEffect(() => {
     console.log("funCounter updated...");
     const jokeCategories = {
       0: "animal",
@@ -59,6 +60,7 @@ export const FunctionCounter = () => {
 
     //return cleanup function if needed
   }, [funCounterState.counter]); // run this effect when funCounterState is updated
+  */
 
   // state hook for dumb counter
   const [counterState, setCounterState] = useState({
@@ -107,8 +109,7 @@ export const FunctionCounter = () => {
           +
         </button>
 
-        <p>[{isLoading ? "..." : joke.category}]</p>
-        <p>{isLoading ? "Loading..." : joke.text}</p>
+        <Joke counter={funCounterState.counter} />
       </div>
     </React.Fragment>
   );
