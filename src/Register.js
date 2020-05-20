@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function Register() {
   const [email, setEmail] = useState(""); // using aray destructuring
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const emailRef = useRef();
+
+  useEffect(() => {
+    emailRef.current.focus();
+  }, []);
 
   return (
     <div className="Register">
@@ -23,6 +28,7 @@ function Register() {
       <p>
         Email:{" "}
         <input
+          ref={emailRef}
           type="text"
           name="email"
           value={email}
